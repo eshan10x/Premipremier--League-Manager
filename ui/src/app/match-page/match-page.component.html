@@ -1,0 +1,55 @@
+<div class="content-container">
+
+  <button mat-button (click)="gen()">Generate a Match</button>
+
+  <input class="form-control" type="text" name="dateTo" [(ngModel)]="dateTo" (ngModelChange)="search()" placeholder=" Enter Date to search ">
+
+  <div class="table-container">
+
+    <table mat-table [dataSource]="MatchData" class="mat-elevation-z8">
+      
+      <!-- Team 1 column -->
+      <ng-container matColumnDef="team1">
+        <th mat-header-cell *matHeaderCellDef> Team 1 </th>
+        <td mat-cell *matCellDef="let element"> {{element.team1}} </td>
+      </ng-container>
+    
+      <!-- Team 2 Column -->
+      <ng-container matColumnDef="team2">
+        <th mat-header-cell *matHeaderCellDef> Team 2 </th>
+        <td mat-cell *matCellDef="let element"> {{element.team2}} </td>
+      </ng-container>
+    
+      <!-- Team 1 Goals Column -->
+      <ng-container matColumnDef="team1Goals">
+        <th mat-header-cell *matHeaderCellDef> Team 1 Goals </th>
+        <td mat-cell *matCellDef="let element"> {{element.team1Goals}} </td>
+      </ng-container>
+    
+      <!-- Team2 Goals column -->
+      <ng-container matColumnDef="team2Goals">
+        <th mat-header-cell *matHeaderCellDef> Team 2 Goals </th>
+        <td mat-cell *matCellDef="let element"> {{element.team2Goals}} </td>
+      </ng-container>
+
+      <!-- Match stadium column -->
+      <ng-container matColumnDef="matchStadium">
+        <th mat-header-cell *matHeaderCellDef> Match Stadium </th>
+        <td mat-cell *matCellDef="let element"> {{element.matchStadium}} </td>
+      </ng-container>
+
+      <!-- date Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.date.day}}/{{element.date.month}}/{{element.date.year}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns sticky: true" ></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="detail_row"></tr>
+
+    </table>
+
+  </div>
+
+</div>
+
