@@ -13,3 +13,5 @@ To create this project we need to have,
 If you’re on macOS,
 You need to have homebrew installed and if you recently updated to
 macOS Big Sur with homebrew you need to reinstall terminal tools.
+
+![Screenshot 2021-05-31 190235](https://user-images.githubusercontent.com/61341298/120209072-dd88d500-c24b-11eb-96f9-c6d8a3b07775.png)
